@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Educação🎓</h2>
+
+<form method="POST">
+    <input type="number" step="0.01" name="nota1" placeholder="Nota 1" required>
+    <input type="number" step="0.01" name="nota2" placeholder="Nota 2" required>
+    <button type="submit">Calcular</button>
+</form>
+
+{% if media %}
+<p>Média: {{ media }}</p>
+<p>Status: {{ status }}</p>
+{% endif %}
+
+{% endblock %}

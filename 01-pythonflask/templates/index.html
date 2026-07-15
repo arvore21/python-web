@@ -1,0 +1,13 @@
+{%  extends 'base.html' %}
+
+{% block content %}
+<h1> Boas-vindas ao meu site </h1>
+
+<img src="{{ url_for('static', filename='img/banner.jpg') }}" alt="imagem do site" class="imagem" />
+
+<div class="botoes">
+    <a href="/combustivel"><button>Combustível</button></a>
+    <a href="/joias"><button>Joias</button></a>
+    <a href="/educacao"><button>Educação</button></a>
+</div>
+{% endblock %}

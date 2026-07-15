@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Combustível⛽</h2>
+
+<form method="POST">
+       <input type="number" step="0.01" name="litros" placeholder="Litros" required>
+       <input type="number" step="0.01" name="preco" placeholder="Preço por litro" required>
+       <button type="submit">Calcular</button>
+</form>
+
+{% if total %}
+<p>Total: R$ {{ "{:,.2f}".format(total).replace(",", "X").replace(".", ",").replace("X", ".") }}</p>
+<p>{{ mensagem }}</p>
+ 
+{% endif %}
+ 
+{% endblock %}
