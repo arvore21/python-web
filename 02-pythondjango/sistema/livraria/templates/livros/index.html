@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %} Lista de Livros {% endblock %}
+
+{% block conteudo %}
+<div class="card">
+    <div class="card-header">
+        <a
+            name=""
+            id=""
+            class="btn btn-success"
+            href="{% url 'criar' %}"
+            role="button"
+            >Adicionar novo livro</a
+        >
+        
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Livros</h4>
+        <div
+            class="table-responsive"
+        >
+            <table
+                class="table table-primary"
+            >
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Título</th>
+                        <th scope="col">Imagem</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Framework Django para Iniciantes</td>
+                        <td>Imagem.jpg</td>
+                        <td>Framework Django para Iniciantes tem como objetivo ensinar...</td>
+                        <td>Alterar | Excluir</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+
+    </div>
+    <div class="card-footer text-body-secondary"></div>
+</div>
+
+
+{% endblock %}
