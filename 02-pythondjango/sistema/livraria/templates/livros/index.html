@@ -1,7 +1,7 @@
 {% extends "base.html" %}
-
+ 
 {% block title %} Lista de Livros {% endblock %}
-
+ 
 {% block conteudo %}
 <div class="card">
     <div class="card-header">
@@ -13,8 +13,9 @@
             role="button"
             >Adicionar novo livro</a
         >
-        
+       
     </div>
+   
     <div class="card-body">
         <h4 class="card-title">Livros</h4>
         <div
@@ -36,18 +37,41 @@
                     <tr>
                         <td>1</td>
                         <td>Framework Django para Iniciantes</td>
-                        <td>Imagem.jpg</td>
-                        <td>Framework Django para Iniciantes tem como objetivo ensinar...</td>
-                        <td>Alterar | Excluir</td>
+                        <td>imagem.jpg</td>
+                        <td>o Framework Django para iniciantes tem como objetivo ensinar...</td>
+                        <td>
+                            <a
+                                name=""
+                                id=""
+                                class="btn btn-info"
+                                href="{% url 'alterar' %}"
+                                role="button"
+                                >Alterar</a
+                            >
+                           
+                           
+                            |
+                           
+                            <a
+                                name=""
+                                id=""
+                                class="btn btn-danger"
+                                href="#"
+                                role="button"
+                                >Excluir</a
+                            >
+                           
+                       
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        
-
+       
+       
     </div>
     <div class="card-footer text-body-secondary"></div>
 </div>
-
-
+ 
+ 
 {% endblock %}
