@@ -2,7 +2,8 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 
-# Create your views here.
+from .models import Livro
+from .forms import LivroForm
 
 def inicio(request):
     # return HttpResponse("<h1>Boas vindas a livraria Ana Cunha</h1>")
@@ -12,10 +13,12 @@ def sobre(request):
     return render(request, 'pages/sobre.html')
 
 def livros(request):
-    return render(request, 'livros/index.html')
+    livros = Livro.objects.all()
+    return render(request, 'livros/index.html', {'livros': livros})
 
 def criar(request):
-    return render(request, 'livros/criar.html')
+    formulario = LivroForm(request.POST or None)
+    return render(request, 'livros/criar.html', {'formulario': formulario})
 
 def alterar(request):
     return render(request, 'livros/alterar.html')

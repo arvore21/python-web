@@ -34,11 +34,14 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {%for livro in livros %}
                     <tr>
-                        <td>1</td>
-                        <td>Framework Django para Iniciantes</td>
-                        <td>imagem.jpg</td>
-                        <td>o Framework Django para iniciantes tem como objetivo ensinar...</td>
+                        <td>{{ livro.id }}</td>
+                        <td>{{ livro.titulo }}</td>
+                        <td>
+                            <img src="{{ livro.imagem.url }}" height="100" />
+                        </td>
+                        <td>{{ livro.descricao}}</td>
                         <td>
                             <a
                                 name=""
@@ -64,6 +67,7 @@
                        
                         </td>
                     </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
