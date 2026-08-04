@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from django.http import HttpResponse
 
@@ -17,9 +17,22 @@ def livros(request):
     return render(request, 'livros/index.html', {'livros': livros})
 
 def criar(request):
-    formulario = LivroForm(request.POST or None)
+    formulario = LivroForm(request.POST or None, request.FILES or None)
+    if formulario.is_valid():
+        formulario.save()
+        return redirect('livros')
     return render(request, 'livros/criar.html', {'formulario': formulario})
 
-def alterar(request):
-    return render(request, 'livros/alterar.html')
+def alterar(request, id):
+    livro = Livro.objects.get(id=id)
+    formulario = LivroForm(request.POST or None, request.FILES or None, instance=livro)
+    if formulario.is_valid() and request.POST:
+        formulario.save()
+        return redirect('livros')
+    return render(request, 'livros/alterar.html', {'formulario': formulario})
+
+def excluir(request, id):
+    livro = Livro.objects.get(id=id)
+    livro.delete()
+    return redirect('livros')
 

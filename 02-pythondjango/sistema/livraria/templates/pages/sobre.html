@@ -3,6 +3,20 @@
 {% block titulo %} Sobre {% endblock %}
 
 {% block conteudo %}
-Seção sobre - em construção
+<div class="sobre-container">
+<h1>Sobre a Livraria da Ana</h1>
+
+
+<img src="{{ url_for('static', filename='imagens/livraria.jpg') }}"
+alt="Livraria da Ana"
+width="300" />
+
+<p>
+A <strong>Livraria da Ana</strong> nasceu com propostas inspiradoras. Aqui você encontra
+livros de diversos gêneros, desde romances e ficção até títulos acadêmicos
+e de desenvolvimento pessoal.
+</p>
+
+</div>
 {% endblock %}
 

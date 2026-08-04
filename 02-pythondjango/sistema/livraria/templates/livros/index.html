@@ -47,7 +47,7 @@
                                 name=""
                                 id=""
                                 class="btn btn-info"
-                                href="{% url 'alterar' %}"
+                                href="{% url 'alterar' livro.id %}"
                                 role="button"
                                 >Alterar</a
                             >
@@ -59,8 +59,9 @@
                                 name=""
                                 id=""
                                 class="btn btn-danger"
-                                href="#"
+                                href="{% url 'excluir' livro.id %}"
                                 role="button"
+                                onclick="return confirm('Tem certeza que desseja excluir este livro?');"
                                 >Excluir</a
                             >
                            
